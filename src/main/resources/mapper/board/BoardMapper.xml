@@ -13,4 +13,9 @@
         FROM CYCI_BOARD
     </select>
 
+    <insert id="register" parameterType="BoardRegiterDTO">
+        INSERT INTO CYCI_BOARD (USER_ID, TITLE, CONTENT, CREATE_AT ) VALUES
+        (#{userId}, #{title}, #{content}, SYSDATE())
+    </insert>
+
 </mapper>
