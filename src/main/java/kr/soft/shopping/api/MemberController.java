@@ -1,5 +1,6 @@
 package kr.soft.shopping.api;
 
+import kr.soft.shopping.dto.member.MemberLoginDTO;
 import kr.soft.shopping.dto.member.MemberRegisterDTO;
 import kr.soft.shopping.service.MemberService;
 import lombok.extern.slf4j.Slf4j;
@@ -26,5 +27,15 @@ public class MemberController {
         memberService.register(memberRegisterDTO);
 
         return ResponseEntity.ok("ok");
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody MemberLoginDTO memberLoginDTO) {
+        log.info("/api/member/login");
+        log.info("data: {}", memberLoginDTO.toString());
+
+        boolean check = memberService.login(memberLoginDTO);
+
+        return ResponseEntity.ok(check);
     }
 }

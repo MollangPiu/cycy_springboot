@@ -1,5 +1,6 @@
 package kr.soft.shopping.service;
 
+import kr.soft.shopping.dto.member.MemberLoginDTO;
 import kr.soft.shopping.dto.member.MemberRegisterDTO;
 import kr.soft.shopping.mapper.MemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,5 +14,14 @@ public class MemberService {
 
     public void register(MemberRegisterDTO dto) {
         memberMapper.register(dto);
+    }
+
+    public boolean login(MemberLoginDTO dto) {
+        String pw = memberMapper.login(dto.getUserId());
+        if(pw == null || !pw.equals(dto.getUserPw())) {
+            return false;
+        }
+
+        return true;
     }
 }
