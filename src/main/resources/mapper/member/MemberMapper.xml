@@ -9,9 +9,10 @@
         VALUES ( #{userId}, #{userPw}, #{userEmail})
     </insert>
 
-    <select id="login" parameterType="String" resultType="String">
-        SELECT USER_PW FROM CYCI_USER
+    <select id="login" parameterType="String" resultType="MemberLoginIdxDTO">
+        SELECT USER_IDX, USER_PW FROM CYCI_USER
         WHERE USER_ID = #{param}
     </select>
+
 
 </mapper>

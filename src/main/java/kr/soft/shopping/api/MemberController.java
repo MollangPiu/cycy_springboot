@@ -29,6 +29,11 @@ public class MemberController {
         return ResponseEntity.ok("ok");
     }
 
+    /**
+     * 
+     * @param memberLoginDTO
+     * @return
+     */
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody MemberLoginDTO memberLoginDTO) {
         log.info("/api/member/login");
