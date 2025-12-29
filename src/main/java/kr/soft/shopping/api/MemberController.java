@@ -34,7 +34,7 @@ public class MemberController {
         log.info("/api/member/login");
         log.info("data: {}", memberLoginDTO.toString());
 
-        boolean check = memberService.login(memberLoginDTO);
+        String check = memberService.login(memberLoginDTO);
 
         return ResponseEntity.ok(check);
     }

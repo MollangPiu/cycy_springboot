@@ -16,12 +16,15 @@ public class MemberService {
         memberMapper.register(dto);
     }
 
-    public boolean login(MemberLoginDTO dto) {
+    public String login(MemberLoginDTO dto) {
         String pw = memberMapper.login(dto.getUserId());
         if(pw == null || !pw.equals(dto.getUserPw())) {
-            return false;
+            return null;
         }
+        
+        //로그인이 성공이 되었을 때. 허가증을 만들어보자
+        String text = "apple_"+dto.getUserId();
 
-        return true;
+        return text;
     }
 }
