@@ -15,5 +15,7 @@
             , AUTH_NAME
         FROM CYCI_AUTH
         WHERE AUTH_NAME = #{authName}
+        ORDER BY AUTH_IDX DESC
+        LIMIT 1
     </select>
 </mapper>
