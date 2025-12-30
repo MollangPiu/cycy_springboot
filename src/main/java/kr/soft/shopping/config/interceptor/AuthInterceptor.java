@@ -9,12 +9,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Slf4j
 @Component
 public class AuthInterceptor implements HandlerInterceptor {
 
     @Autowired
     private AuthMapper authMapper;
+
+
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -28,6 +33,7 @@ public class AuthInterceptor implements HandlerInterceptor {
         log.info("token: {}", token);
 
         MemberAuthDTO authDTO = authMapper.searchKey(token);
+
         //토큰이 검색이 x
         if(authDTO == null) {
             return false;
