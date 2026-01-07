@@ -14,6 +14,8 @@ import java.util.List;
 @RequestMapping("/api/board")
 public class BoardController {
 
+    //apple
+
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
