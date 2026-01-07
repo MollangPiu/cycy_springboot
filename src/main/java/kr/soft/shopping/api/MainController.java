@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/main")
 public class MainController {
 
+    //삼성~
+
+
     @GetMapping("/test")
     public void test() {
         log.info("test");

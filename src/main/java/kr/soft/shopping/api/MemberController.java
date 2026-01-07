@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/member")
 public class MemberController {
 
+    //삼성 작엄중~
+
     @Autowired
     private MemberService memberService;
 
